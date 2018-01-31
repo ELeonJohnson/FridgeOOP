@@ -13,6 +13,7 @@ namespace FrideOOP
         private string dispenserType;
         private int foodAmount;
         private bool bulbsWork;
+        
 
 
         //Properties
@@ -67,7 +68,8 @@ namespace FrideOOP
             if (dispenserType == "basic water dispenser")
             {
                 Console.WriteLine("Here's some lukewarm water!");
-            } else if (dispenserType == "deluxe dispenser")
+            }
+            else if (dispenserType == "deluxe dispenser")
             {
                 Console.WriteLine("Enjoy your perfect ice water!");
             }
@@ -77,6 +79,52 @@ namespace FrideOOP
             }
 
 
+        }
+        public string ChangeTheBulbs()
+        {
+            if (bulbsWork == false)
+            {
+                bulbsWork = true;
+                return "The bulbs have been changed.";
+            }
+            else
+            {
+                return "The bulbs don't have to be changed.";
+            }
+        }
+
+        public void RemoveFood(int foodRemove)
+        {
+            foodAmount -= foodRemove;
+        }
+
+        public string CheckSupplies()
+        {
+            if (foodAmount >= 80)
+            {
+                return "fully stocked";
+            } else if (foodAmount > 40)
+            {
+                return "getting low";
+            }
+            else
+            {
+                return "Time to do some grocery shopping.";
+            }
+
+        }
+
+        public string Clean()
+        {
+            if(isClean == false)
+            {
+                isClean = true;
+                return "I cleaned the fridge";
+            }
+            else
+            {
+                return "The fridge is already clean.";
+            }
         }
        
     }
